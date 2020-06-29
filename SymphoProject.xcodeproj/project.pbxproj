@@ -38,6 +38,17 @@
 		3447EA4024AA19A10036901A /* comments1_page1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3447EA3C24A9F0310036901A /* comments1_page1.json */; };
 		3447EA4124AA19A10036901A /* comments1_page2.json in Resources */ = {isa = PBXBuildFile; fileRef = 3447EA3B24A9F0310036901A /* comments1_page2.json */; };
 		3447EA4224AA19A10036901A /* comments1_page3.json in Resources */ = {isa = PBXBuildFile; fileRef = 3447EA3A24A9F0310036901A /* comments1_page3.json */; };
+		3447EA4324AA1FC30036901A /* NSThread+Block.h in Sources */ = {isa = PBXBuildFile; fileRef = 3447EA1924A9C5520036901A /* NSThread+Block.h */; };
+		3447EA4424AA1FC30036901A /* NSThread+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EA1824A9C5520036901A /* NSThread+Block.m */; };
+		3447EA4524AA1FC30036901A /* BlogService.h in Sources */ = {isa = PBXBuildFile; fileRef = 3447EA0F24A9BA6E0036901A /* BlogService.h */; };
+		3447EA4624AA1FC30036901A /* BlogService+internal.h in Sources */ = {isa = PBXBuildFile; fileRef = 3447EA2824A9D7C00036901A /* BlogService+internal.h */; };
+		3447EA4724AA1FC30036901A /* BlogService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EA1024A9BA6E0036901A /* BlogService.m */; };
+		3447EA4824AA1FC30036901A /* Author.h in Sources */ = {isa = PBXBuildFile; fileRef = 3447EA2124A9CD520036901A /* Author.h */; };
+		3447EA4924AA1FC30036901A /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EA2224A9CD520036901A /* Author.m */; };
+		3447EA4A24AA1FC30036901A /* Post.h in Sources */ = {isa = PBXBuildFile; fileRef = 3447EA2924A9D9390036901A /* Post.h */; };
+		3447EA4B24AA1FC30036901A /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EA2A24A9D9390036901A /* Post.m */; };
+		3447EA4C24AA1FC30036901A /* Comment.h in Sources */ = {isa = PBXBuildFile; fileRef = 3447EA2C24A9D94C0036901A /* Comment.h */; };
+		3447EA4D24AA1FC30036901A /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EA2D24A9D94C0036901A /* Comment.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -251,7 +262,6 @@
 					};
 					3447E9FE24A943800036901A = {
 						CreatedOnToolsVersion = 11.4.1;
-						TestTargetID = 3447E9E324A9437E0036901A;
 					};
 				};
 			};
@@ -332,6 +342,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3447EA4324AA1FC30036901A /* NSThread+Block.h in Sources */,
+				3447EA4424AA1FC30036901A /* NSThread+Block.m in Sources */,
+				3447EA4524AA1FC30036901A /* BlogService.h in Sources */,
+				3447EA4624AA1FC30036901A /* BlogService+internal.h in Sources */,
+				3447EA4724AA1FC30036901A /* BlogService.m in Sources */,
+				3447EA4824AA1FC30036901A /* Author.h in Sources */,
+				3447EA4924AA1FC30036901A /* Author.m in Sources */,
+				3447EA4A24AA1FC30036901A /* Post.h in Sources */,
+				3447EA4B24AA1FC30036901A /* Post.m in Sources */,
+				3447EA4C24AA1FC30036901A /* Comment.h in Sources */,
+				3447EA4D24AA1FC30036901A /* Comment.m in Sources */,
 				3447EA2024A9C73F0036901A /* ServerStub.m in Sources */,
 				3447EA0424A943800036901A /* SymphoTestTests.m in Sources */,
 			);
@@ -516,7 +537,6 @@
 		3447EA0C24A943800036901A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QDUFAZQ2BD;
 				INFOPLIST_FILE = SymphoTestTests/Info.plist;
@@ -529,14 +549,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sympho.test.SymphoTestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SymphoProject.app/SymphoProject";
 			};
 			name = Debug;
 		};
 		3447EA0D24A943800036901A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QDUFAZQ2BD;
 				INFOPLIST_FILE = SymphoTestTests/Info.plist;
@@ -549,7 +567,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sympho.test.SymphoTestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SymphoProject.app/SymphoProject";
 			};
 			name = Release;
 		};
