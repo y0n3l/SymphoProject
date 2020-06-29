@@ -18,6 +18,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    /*BlogService* blog = [[BlogService alloc] init];
+    [blog getAuthorsPage:1 withCompletionHandler:^(NSArray * _Nonnull authors, NSError * _Nullable error) {
+        NSLog(@"Authors %@", authors);
+    }];*/
     return YES;
 }
 

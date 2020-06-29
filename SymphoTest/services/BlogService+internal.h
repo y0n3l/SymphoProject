@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSArray*) createAuthorsFromJSONStructure:(NSArray*)json;
 
 -(NSArray*) createPostsFromJSONStructure:(NSArray*)json;
+
+-(NSArray*) createCommentsFromJSONStructure:(NSArray*)json;
 @end
 
 NS_ASSUME_NONNULL_END

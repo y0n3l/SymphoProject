@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Author.h"
 #import "Post.h"
+#import "Comment.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,13 +18,16 @@ typedef void (^AuthorsDownloadCompletionHandler)(NSArray* authors, NSError*  _Nu
 
 typedef void (^PostsDownloadCompletionHandler)(NSArray* posts, NSError*  _Nullable error);
 
+typedef void (^CommentsDownloadCompletionHandler)(NSArray* comments, NSError*  _Nullable error);
+
 @interface BlogService : NSObject {
-    NSOperationQueue* _requestsQueue;
 }
 
 -(void) getAuthorsPage:(NSInteger)page withCompletionHandler:(AuthorsDownloadCompletionHandler)handler;
 
 -(void) getPostsPage:(NSInteger)page forAuthor:(Author*)author withCompletionHandler:(PostsDownloadCompletionHandler)handler;
+
+-(void) getCommentsPage:(NSInteger)page forPost:(Post*)post withCompletionHandler:(CommentsDownloadCompletionHandler)handler;
 
 
 @end

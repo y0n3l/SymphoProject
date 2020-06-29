@@ -32,6 +32,12 @@
 		3447EA3724A9E4050036901A /* author1_page1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3447EA3024A9D9F10036901A /* author1_page1.json */; };
 		3447EA3824A9E4050036901A /* author1_page2.json in Resources */ = {isa = PBXBuildFile; fileRef = 3447EA3124A9D9F10036901A /* author1_page2.json */; };
 		3447EA3924A9E4050036901A /* author1_page3.json in Resources */ = {isa = PBXBuildFile; fileRef = 3447EA2F24A9D9F10036901A /* author1_page3.json */; };
+		3447EA3D24A9F0310036901A /* comments1_page3.json in Resources */ = {isa = PBXBuildFile; fileRef = 3447EA3A24A9F0310036901A /* comments1_page3.json */; };
+		3447EA3E24A9F0310036901A /* comments1_page2.json in Resources */ = {isa = PBXBuildFile; fileRef = 3447EA3B24A9F0310036901A /* comments1_page2.json */; };
+		3447EA3F24A9F0310036901A /* comments1_page1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3447EA3C24A9F0310036901A /* comments1_page1.json */; };
+		3447EA4024AA19A10036901A /* comments1_page1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3447EA3C24A9F0310036901A /* comments1_page1.json */; };
+		3447EA4124AA19A10036901A /* comments1_page2.json in Resources */ = {isa = PBXBuildFile; fileRef = 3447EA3B24A9F0310036901A /* comments1_page2.json */; };
+		3447EA4224AA19A10036901A /* comments1_page3.json in Resources */ = {isa = PBXBuildFile; fileRef = 3447EA3A24A9F0310036901A /* comments1_page3.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +85,9 @@
 		3447EA2F24A9D9F10036901A /* author1_page3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = author1_page3.json; sourceTree = "<group>"; };
 		3447EA3024A9D9F10036901A /* author1_page1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = author1_page1.json; sourceTree = "<group>"; };
 		3447EA3124A9D9F10036901A /* author1_page2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = author1_page2.json; sourceTree = "<group>"; };
+		3447EA3A24A9F0310036901A /* comments1_page3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = comments1_page3.json; sourceTree = "<group>"; };
+		3447EA3B24A9F0310036901A /* comments1_page2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = comments1_page2.json; sourceTree = "<group>"; };
+		3447EA3C24A9F0310036901A /* comments1_page1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = comments1_page1.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +192,9 @@
 				3447EA3024A9D9F10036901A /* author1_page1.json */,
 				3447EA3124A9D9F10036901A /* author1_page2.json */,
 				3447EA2F24A9D9F10036901A /* author1_page3.json */,
+				3447EA3C24A9F0310036901A /* comments1_page1.json */,
+				3447EA3B24A9F0310036901A /* comments1_page2.json */,
+				3447EA3A24A9F0310036901A /* comments1_page3.json */,
 			);
 			path = serverResponses;
 			sourceTree = "<group>";
@@ -268,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3447E9F724A943800036901A /* LaunchScreen.storyboard in Resources */,
+				3447EA3E24A9F0310036901A /* comments1_page2.json in Resources */,
 				3447EA2624A9CEC40036901A /* authors_2.json in Resources */,
 				3447E9F424A943800036901A /* Assets.xcassets in Resources */,
 				3447EA3324A9D9F10036901A /* author1_page1.json in Resources */,
@@ -275,6 +288,8 @@
 				3447E9F224A9437E0036901A /* Main.storyboard in Resources */,
 				3447EA2724A9CEC40036901A /* authors_3.json in Resources */,
 				3447EA3224A9D9F10036901A /* author1_page3.json in Resources */,
+				3447EA3D24A9F0310036901A /* comments1_page3.json in Resources */,
+				3447EA3F24A9F0310036901A /* comments1_page1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +297,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3447EA4024AA19A10036901A /* comments1_page1.json in Resources */,
+				3447EA4124AA19A10036901A /* comments1_page2.json in Resources */,
+				3447EA4224AA19A10036901A /* comments1_page3.json in Resources */,
 				3447EA3524A9E4050036901A /* authors_2.json in Resources */,
 				3447EA3624A9E4050036901A /* authors_3.json in Resources */,
 				3447EA3724A9E4050036901A /* author1_page1.json in Resources */,

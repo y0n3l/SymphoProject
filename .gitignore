@@ -1,0 +1,7 @@
+*/build
+xcschemes/
+xcuserdata/**
+project.xcworkspace/
+gueganton.xcuserdatad/
+*.xcuserstate
+*.xcbkptlist

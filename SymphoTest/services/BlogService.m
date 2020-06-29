@@ -15,39 +15,64 @@
 -(instancetype) init {
     self = [super init];
     if (self) {
-        _requestsQueue = [[NSOperationQueue alloc] init];
     }
     return self;
 }
 
 -(void) getAuthorsPage:(NSInteger)page withCompletionHandler:(AuthorsDownloadCompletionHandler)handler {
-    NSThread* callerThread = [NSThread currentThread];
-    [_requestsQueue addOperationWithBlock:^{
-        NSArray* authors = [self downloadAuthorsPage:page];
-        [callerThread performBlock:^{
-            handler(authors, nil);
+    NSThread* currentThread;
+    NSURLSession* urlSession = [NSURLSession sharedSession];
+    NSURLRequest* request = [NSURLRequest requestWithURL:[BlogService urlForAuthorsPage:page]];
+    NSURLSessionDataTask *dataTask = [urlSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSArray* json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSArray* deserializedObjs = [self createAuthorsFromJSONStructure:json];
+        [currentThread performBlock:^{
+            handler(deserializedObjs, nil);
         }];
     }];
+    [dataTask resume];
 }
 
 -(void) getPostsPage:(NSInteger)page forAuthor:(Author*)author withCompletionHandler:(PostsDownloadCompletionHandler)handler {
-    NSThread* callerThread = [NSThread currentThread];
-    [_requestsQueue addOperationWithBlock:^{
-        NSArray* posts = [self downloadPostsPage:page forAuthor:author];
-        [callerThread performBlock:^{
-            handler(posts, nil);
+    NSThread* currentThread;
+    NSURLSession* urlSession = [NSURLSession sharedSession];
+    NSURLRequest* request = [NSURLRequest requestWithURL:[BlogService urlForPostFromAuthor:author page:page]];
+    NSURLSessionDataTask *dataTask = [urlSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSArray* json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSArray* deserializedObjs = [self createPostsFromJSONStructure:json];
+        [currentThread performBlock:^{
+            handler(deserializedObjs, nil);
         }];
     }];
+    [dataTask resume];
 }
 
-/** Synchronously downloads the given authors page.
- */
--(NSArray*) downloadAuthorsPage:(NSInteger)page {
-    return @[@"test"];
+-(void) getCommentsPage:(NSInteger)page forPost:(Post*)post withCompletionHandler:(CommentsDownloadCompletionHandler)handler {
+    NSThread* currentThread;
+    NSURLSession* urlSession = [NSURLSession sharedSession];
+    NSURLRequest* request = [NSURLRequest requestWithURL:[BlogService urlForCommentsFromPost:post page:page]];
+    NSURLSessionDataTask *dataTask = [urlSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSArray* json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSArray* deserializedObjs = [self createCommentsFromJSONStructure:json];
+        [currentThread performBlock:^{
+            handler(deserializedObjs, nil);
+        }];
+    }];
+    [dataTask resume];
 }
 
--(NSArray*) downloadPostsPage:(NSInteger)page forAuthor:(Author*)author {
-    return @[@"test"];
++(NSURL*) urlForAuthorsPage:(NSInteger)page {
+    return [NSURL URLWithString:[NSString stringWithFormat:@"https://sym-json-server.herokuapp.com/authors?_page=%ld", (long)page]];
+}
+
++(NSURL*) urlForPostFromAuthor:(Author*)author page:(NSInteger)page {
+    return [NSURL URLWithString:[NSString stringWithFormat:@"https://sym-json-server.herokuapp.com/posts?authorId=%ld&_page=%ld",
+                                 (long)author.userId, (long)page ]];
+}
+
++(NSURL*) urlForCommentsFromPost:(Post*)post page:(NSInteger)page {
+    return [NSURL URLWithString:[NSString stringWithFormat:@"https://sym-json-server.herokuapp.com/comments?postId=%ld&_page=%ld",
+                                 (long)post.postId, page]];
 }
 
 -(NSArray*) createAuthorsFromJSONStructure:(NSArray*)json {
@@ -94,5 +119,31 @@
     return postsArray;
 }
 
+/*
+"id": 1,
+"date": "2017-02-20T02:37:31.883Z",
+"body": "Ratione et modi ipsam qui doloremque harum et. Quia recusandae voluptas ex fugiat. Aut eligendi quia natus voluptatem error delectus incidunt adipisci. Est illum rem cumque.",
+"userName": "Shaun_Orn",
+"email": "halle79@gmail.com",
+"avatarUrl": "https://s3.amazonaws.com/uifaces/faces/twitter/a_harris88/128.jpg",
+"postId": 1*/
+
+
+-(NSArray*) createCommentsFromJSONStructure:(NSArray*)json {
+    NSMutableArray* commentsArray = [NSMutableArray array];
+    for (NSDictionary* dict in json) {
+        Comment* comment = [[Comment alloc] init];
+        comment.commentId = [dict[@"id"] integerValue];
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        [dateFormat setDateFormat: @"yyyy-MM-dd'T'HH:mm:ss.SSSZ"];
+        comment.date = [dateFormat dateFromString:dict[@"date"]]; ;
+        comment.body = dict[@"body"];
+        comment.userName = dict[@"userName"];
+        comment.email = dict[@"email"];
+        comment.avatarURL = [NSURL URLWithString:dict[@"avatarUrl"]];
+        [commentsArray addObject:comment];
+    }
+    return commentsArray;
+}
 
 @end
