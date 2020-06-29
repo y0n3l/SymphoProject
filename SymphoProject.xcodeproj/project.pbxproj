@@ -49,6 +49,9 @@
 		3447EA4B24AA1FC30036901A /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EA2A24A9D9390036901A /* Post.m */; };
 		3447EA4C24AA1FC30036901A /* Comment.h in Sources */ = {isa = PBXBuildFile; fileRef = 3447EA2C24A9D94C0036901A /* Comment.h */; };
 		3447EA4D24AA1FC30036901A /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EA2D24A9D94C0036901A /* Comment.m */; };
+		3447EA5124AA24070036901A /* UIAuthorsViewControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EA5024AA24070036901A /* UIAuthorsViewControllerDelegate.m */; };
+		3447EA5224AA288C0036901A /* ServerStub.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EA1F24A9C73F0036901A /* ServerStub.m */; };
+		3447EA5324AA2EE20036901A /* authors_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3447EA1C24A9C6E60036901A /* authors_1.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +102,8 @@
 		3447EA3A24A9F0310036901A /* comments1_page3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = comments1_page3.json; sourceTree = "<group>"; };
 		3447EA3B24A9F0310036901A /* comments1_page2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = comments1_page2.json; sourceTree = "<group>"; };
 		3447EA3C24A9F0310036901A /* comments1_page1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = comments1_page1.json; sourceTree = "<group>"; };
+		3447EA4F24AA24070036901A /* UIAuthorsViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIAuthorsViewControllerDelegate.h; sourceTree = "<group>"; };
+		3447EA5024AA24070036901A /* UIAuthorsViewControllerDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIAuthorsViewControllerDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +147,7 @@
 			children = (
 				3447EA1724A9C5310036901A /* utils */,
 				3447EA0E24A9B9FB0036901A /* services */,
+				3447EA4E24AA23B70036901A /* UI */,
 				3447E9E724A9437E0036901A /* AppDelegate.h */,
 				3447E9E824A9437E0036901A /* AppDelegate.m */,
 				3447E9EA24A9437E0036901A /* SceneDelegate.h */,
@@ -208,6 +214,15 @@
 				3447EA3A24A9F0310036901A /* comments1_page3.json */,
 			);
 			path = serverResponses;
+			sourceTree = "<group>";
+		};
+		3447EA4E24AA23B70036901A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				3447EA4F24AA24070036901A /* UIAuthorsViewControllerDelegate.h */,
+				3447EA5024AA24070036901A /* UIAuthorsViewControllerDelegate.m */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,9 +304,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3447EA5324AA2EE20036901A /* authors_1.json in Resources */,
+				3447EA2624A9CEC40036901A /* authors_2.json in Resources */,
 				3447E9F724A943800036901A /* LaunchScreen.storyboard in Resources */,
 				3447EA3E24A9F0310036901A /* comments1_page2.json in Resources */,
-				3447EA2624A9CEC40036901A /* authors_2.json in Resources */,
 				3447E9F424A943800036901A /* Assets.xcassets in Resources */,
 				3447EA3324A9D9F10036901A /* author1_page1.json in Resources */,
 				3447EA3424A9D9F10036901A /* author1_page2.json in Resources */,
@@ -326,12 +342,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3447EA5224AA288C0036901A /* ServerStub.m in Sources */,
 				3447EA1124A9BA6E0036901A /* BlogService.m in Sources */,
 				3447E9EF24A9437E0036901A /* ViewController.m in Sources */,
 				3447EA2E24A9D94C0036901A /* Comment.m in Sources */,
 				3447EA1A24A9C5520036901A /* NSThread+Block.m in Sources */,
 				3447EA2B24A9D9390036901A /* Post.m in Sources */,
 				3447E9E924A9437E0036901A /* AppDelegate.m in Sources */,
+				3447EA5124AA24070036901A /* UIAuthorsViewControllerDelegate.m in Sources */,
 				3447E9FA24A943800036901A /* main.m in Sources */,
 				3447EA2324A9CD520036901A /* Author.m in Sources */,
 				3447E9EC24A9437E0036901A /* SceneDelegate.m in Sources */,

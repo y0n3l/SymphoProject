@@ -20,7 +20,7 @@
 }
 
 -(void) getAuthorsPage:(NSInteger)page withCompletionHandler:(AuthorsDownloadCompletionHandler)handler {
-    NSThread* currentThread;
+    NSThread* currentThread = [NSThread currentThread];
     NSURLSession* urlSession = [NSURLSession sharedSession];
     NSURLRequest* request = [NSURLRequest requestWithURL:[BlogService urlForAuthorsPage:page]];
     NSURLSessionDataTask *dataTask = [urlSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -34,7 +34,7 @@
 }
 
 -(void) getPostsPage:(NSInteger)page forAuthor:(Author*)author withCompletionHandler:(PostsDownloadCompletionHandler)handler {
-    NSThread* currentThread;
+    NSThread* currentThread = [NSThread currentThread];
     NSURLSession* urlSession = [NSURLSession sharedSession];
     NSURLRequest* request = [NSURLRequest requestWithURL:[BlogService urlForPostFromAuthor:author page:page]];
     NSURLSessionDataTask *dataTask = [urlSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
@@ -48,7 +48,7 @@
 }
 
 -(void) getCommentsPage:(NSInteger)page forPost:(Post*)post withCompletionHandler:(CommentsDownloadCompletionHandler)handler {
-    NSThread* currentThread;
+    NSThread* currentThread = [NSThread currentThread];
     NSURLSession* urlSession = [NSURLSession sharedSession];
     NSURLRequest* request = [NSURLRequest requestWithURL:[BlogService urlForCommentsFromPost:post page:page]];
     NSURLSessionDataTask *dataTask = [urlSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {

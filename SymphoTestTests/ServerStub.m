@@ -15,11 +15,14 @@
 -(NSArray*) getJSONContentFromFile:(NSString*)fileName {
     NSBundle* testBundle = [NSBundle bundleForClass:[ServerStub class]];
     NSString *filePath = [testBundle pathForResource:fileName ofType:@"json"];
-
-    NSData *JSONData = [NSData dataWithContentsOfFile:filePath options:NSDataReadingMappedIfSafe error:nil];
-    NSArray* JSONContent = [NSJSONSerialization JSONObjectWithData:JSONData options:0 error:nil];
-    
-    return JSONContent;
+    if (filePath) {
+        NSData *JSONData = [NSData dataWithContentsOfFile:filePath options:NSDataReadingMappedIfSafe error:nil];
+        NSArray* JSONContent = [NSJSONSerialization JSONObjectWithData:JSONData options:0 error:nil];
+        return JSONContent;
+    } else {
+        // cannot find the file => simulate empty content.
+        return @[];
+    }
 }
 
 -(void) getAuthorsPage:(NSInteger)page withCompletionHandler:(AuthorsDownloadCompletionHandler)handler {
