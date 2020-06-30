@@ -85,7 +85,7 @@
         author.userName = dict[@"userName"];
         author.userId = [dict[@"id"] integerValue];
         author.email = dict[@"email"];
-        author.avatarUrl = dict[@"avatarUrl"];
+        author.avatarUrl = [NSURL URLWithString:dict[@"avatarUrl"]];
         double lat = [dict[@"address"][@"latitude"] doubleValue];
         double lon = [dict[@"address"][@"longitude"] doubleValue];
         CLLocation* location = [[CLLocation alloc] initWithLatitude:lat longitude:lon];

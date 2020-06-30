@@ -24,6 +24,7 @@
     _author = author;
     _userNameLabel.text = _author.userName ;
     _nameLabel.text = _author.name;
+    _avatarView.avatarURL = _author.avatarUrl;
 }
 
 -(Author*) author {

@@ -55,6 +55,7 @@
 		3447EA5624AA7C720036901A /* UIPostsPerAuthorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EA5524AA7C720036901A /* UIPostsPerAuthorTableViewController.m */; };
 		3447EA5924AB0E490036901A /* UIPaginatedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EA5724AB0E490036901A /* UIPaginatedTableViewController.m */; };
 		3461EB3D24AB5D3A001FE425 /* UIAuthorHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461EB3C24AB5D3A001FE425 /* UIAuthorHeaderView.m */; };
+		3461EB4024AB8D4C001FE425 /* UIAvatarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461EB3F24AB8D4C001FE425 /* UIAvatarView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,8 @@
 		3447EA5824AB0E490036901A /* UIPaginatedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPaginatedTableViewController.h; sourceTree = "<group>"; };
 		3461EB3B24AB5D3A001FE425 /* UIAuthorHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIAuthorHeaderView.h; sourceTree = "<group>"; };
 		3461EB3C24AB5D3A001FE425 /* UIAuthorHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIAuthorHeaderView.m; sourceTree = "<group>"; };
+		3461EB3E24AB8D4C001FE425 /* UIAvatarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIAvatarView.h; sourceTree = "<group>"; };
+		3461EB3F24AB8D4C001FE425 /* UIAvatarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIAvatarView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +239,8 @@
 				3447EA5524AA7C720036901A /* UIPostsPerAuthorTableViewController.m */,
 				3461EB3B24AB5D3A001FE425 /* UIAuthorHeaderView.h */,
 				3461EB3C24AB5D3A001FE425 /* UIAuthorHeaderView.m */,
+				3461EB3E24AB8D4C001FE425 /* UIAvatarView.h */,
+				3461EB3F24AB8D4C001FE425 /* UIAvatarView.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 				3447EA2E24A9D94C0036901A /* Comment.m in Sources */,
 				3447EA1A24A9C5520036901A /* NSThread+Block.m in Sources */,
 				3447EA2B24A9D9390036901A /* Post.m in Sources */,
+				3461EB4024AB8D4C001FE425 /* UIAvatarView.m in Sources */,
 				3447E9E924A9437E0036901A /* AppDelegate.m in Sources */,
 				3447EA5124AA24070036901A /* UIAuthorsViewControllerDelegate.m in Sources */,
 				3447E9FA24A943800036901A /* main.m in Sources */,

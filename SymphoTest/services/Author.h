@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readwrite, copy) NSString* name;
 @property (readwrite, copy) NSString* userName;
 @property (readwrite) NSInteger userId;
-@property (readwrite, copy) NSString* avatarUrl;
+@property (readwrite, copy) NSURL* avatarUrl;
 @property (readwrite, copy) NSString* email;
 @property (readwrite, copy) CLLocation* location;
 

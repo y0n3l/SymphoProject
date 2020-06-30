@@ -39,7 +39,7 @@
         XCTAssertEqualObjects(author.name, @"Leigh Kessler");
         XCTAssertEqualObjects(author.userName, @"Myrtie_Heller51");
         XCTAssertEqualObjects(author.email, @"vance_hansen7@yahoo.com");
-        XCTAssertEqualObjects(author.avatarUrl, @"https://s3.amazonaws.com/uifaces/faces/twitter/nutzumi/128.jpg");
+        XCTAssertEqualObjects(author.avatarUrl, [NSURL URLWithString:@"https://s3.amazonaws.com/uifaces/faces/twitter/nutzumi/128.jpg"]);
         XCTAssertEqual(author.location.coordinate.latitude, 73.5451);
         XCTAssertEqual(author.location.coordinate.longitude, 155.4534);
     }];
