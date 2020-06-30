@@ -27,9 +27,28 @@
 
 @implementation UIPostsPerAuthorTableViewController
 
+@synthesize author = _author;
+
 -(void) commonInit {
     [super commonInit];
     _blogService = [[BlogService alloc] init];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 200;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    return _headerView;
+}
+
+-(void) setAuthor:(Author *)author {
+    _author = author;
+    _headerView.author = _author;
+}
+
+-(Author*) author {
+    return _author;
 }
 
 /**
