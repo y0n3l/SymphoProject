@@ -78,19 +78,21 @@
             // the expected number of elements is downloaded.
             //TODO improve this a bit....
             this.stillNeedToDownload = ([pageContent count]==this.pageSize);
+            //TODO Could be improved by animating the inseertion of new lines.
             [self.tableView reloadData];
         }];
     }/* else {
         NSLog(@"End of the list reached");
     }*/
     
-    if (indexPath.row < [_contentList count]) {
-        UITableViewCell* cell = [self paginatedTableView:self.tableView cellForContent:self.contentList[indexPath.row]];
-        return cell;
-    } else {
-        // this is the download status cell
+    if (isAboutToShowLastCell) {
+        // The last last cell is the status cell.
         UIDownloadStateTableViewCell* cell = [self.tableView dequeueReusableCellWithIdentifier:@"DownloadStatus"];
         cell.isDownloading = _stillNeedToDownload;
+        return cell;
+    } else {
+        // otherwise this is content cell.
+        UITableViewCell* cell = [self paginatedTableView:self.tableView cellForContent:self.contentList[indexPath.row]];
         return cell;
     }
 }

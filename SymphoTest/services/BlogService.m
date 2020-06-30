@@ -53,6 +53,7 @@
     NSThread* currentThread = [NSThread currentThread];
     NSURLSession* urlSession = [NSURLSession sharedSession];
     NSURLRequest* request = [NSURLRequest requestWithURL:[BlogService urlForCommentsFromPost:post page:page]];
+    NSLog(@"Connecting to %@", request);
     NSURLSessionDataTask *dataTask = [urlSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSArray* json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         NSArray* deserializedObjs = [self createCommentsFromJSONStructure:json];

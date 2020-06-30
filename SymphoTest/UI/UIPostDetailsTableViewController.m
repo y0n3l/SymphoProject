@@ -55,7 +55,19 @@
     // want 1 row more at the beginning of the table to show the post.
     return [super tableView:tableView numberOfRowsInSection:section]+1;
 }
- 
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    // if this is the first row, we show the full post
+    // otherwise we invoke the paginated controller and make it think that wze want to access
+    // content as row-1 (as we added a header row at this level).
+    if (indexPath.row==0) {
+        UIFullPostTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"FullPost"];
+        cell.post = self.post;
+        return cell;
+    } else {
+        return [super tableView:tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row-1 inSection:indexPath.section]];
+    }
+}
 
 /**
  
