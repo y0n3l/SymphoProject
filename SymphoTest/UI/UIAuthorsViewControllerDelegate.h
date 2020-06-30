@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "BlogService.h"
+#import "UIPostsPerAuthorTableViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -24,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIAuthorsViewControllerDelegate : UITableViewController <UITableViewDataSource, UITableViewDelegate> {
     BlogService* _blogService;
     NSInteger _lastDownloadedPage;
+    IBOutlet UIPostsPerAuthorTableViewController* _postsViewController;
 }
 @property (readonly) NSMutableArray* authorsList;
 @property (readwrite) BOOL isCurrentlyDownloading;

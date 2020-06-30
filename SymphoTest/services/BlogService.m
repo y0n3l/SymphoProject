@@ -23,6 +23,7 @@
     NSThread* currentThread = [NSThread currentThread];
     NSURLSession* urlSession = [NSURLSession sharedSession];
     NSURLRequest* request = [NSURLRequest requestWithURL:[BlogService urlForAuthorsPage:page]];
+    NSLog(@"Connecting to %@", request);
     NSURLSessionDataTask *dataTask = [urlSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSArray* json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         NSArray* deserializedObjs = [self createAuthorsFromJSONStructure:json];
@@ -37,6 +38,7 @@
     NSThread* currentThread = [NSThread currentThread];
     NSURLSession* urlSession = [NSURLSession sharedSession];
     NSURLRequest* request = [NSURLRequest requestWithURL:[BlogService urlForPostFromAuthor:author page:page]];
+    NSLog(@"Connecting to %@", request);
     NSURLSessionDataTask *dataTask = [urlSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSArray* json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         NSArray* deserializedObjs = [self createPostsFromJSONStructure:json];

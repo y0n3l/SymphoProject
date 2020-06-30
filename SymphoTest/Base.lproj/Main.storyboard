@@ -6,7 +6,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Blog Authors-->
+        <!--All authors-->
         <scene sceneID="Tvv-ti-K8s">
             <objects>
                 <tableViewController id="r2w-Pq-EnV" customClass="UIAuthorsViewControllerDelegate" sceneMemberID="viewController">
@@ -45,6 +45,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="_authorName" destination="Nq1-WV-gJ7" id="9Ij-vv-KGX"/>
+                                    <segue destination="3G3-8G-RlC" kind="show" id="a2v-SB-Gfh"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -53,10 +54,9 @@
                             <outlet property="delegate" destination="r2w-Pq-EnV" id="RkC-2G-69b"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Blog Authors" id="vz2-iX-0el"/>
+                    <navigationItem key="navigationItem" title="All authors" id="vz2-iX-0el"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6JK-l5-zNl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <navigationItem title="Title" id="ksl-8N-Y7E"/>
             </objects>
             <point key="canvasLocation" x="802.89855072463774" y="287.94642857142856"/>
         </scene>
@@ -75,6 +75,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="11Z-Pp-sK5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="804" y="289"/>
+        </scene>
+        <!--Author's details-->
+        <scene sceneID="nee-pg-mFG">
+            <objects>
+                <tableViewController id="3G3-8G-RlC" customClass="UIPostsPerAuthorTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zdg-ez-N9U">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" id="Lc5-tY-kpX" customClass="UIPostTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lc5-tY-kpX" id="Vmp-qH-gPn">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DownloadStatus" id="Pz8-bj-Bv6">
+                                <rect key="frame" x="0.0" y="71.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pz8-bj-Bv6" id="mLU-gF-xCv">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3G3-8G-RlC" id="1W8-a9-VVl"/>
+                            <outlet property="delegate" destination="3G3-8G-RlC" id="4UV-JO-0LH"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Author's details" id="mke-tP-1HK"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qy1-ho-Ckv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="899" y="933"/>
         </scene>
     </scenes>
 </document>
