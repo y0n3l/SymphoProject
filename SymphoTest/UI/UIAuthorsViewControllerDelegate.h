@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "BlogService.h"
+#import "UIPaginatedTableViewController.h"
 #import "UIPostsPerAuthorTableViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -22,14 +23,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface UIAuthorsViewControllerDelegate : UITableViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface UIAuthorsViewControllerDelegate : UIPaginatedTableViewController {
     BlogService* _blogService;
-    NSInteger _lastDownloadedPage;
-    IBOutlet UIPostsPerAuthorTableViewController* _postsViewController;
 }
-@property (readonly) NSMutableArray* authorsList;
-@property (readwrite) BOOL isCurrentlyDownloading;
-@property (readwrite) BOOL stillNeedToDownload;
 
 @end
 
