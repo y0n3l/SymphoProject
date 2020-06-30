@@ -7,6 +7,7 @@
 //
 
 #import "UIPaginatedTableViewController.h"
+#import "UIDownloadStateTableViewCell.h"
 
 @implementation UIPaginatedTableViewController
 
@@ -88,8 +89,8 @@
         return cell;
     } else {
         // this is the download status cell
-        UITableViewCell* cell = [self.tableView dequeueReusableCellWithIdentifier:@"DownloadStatus"];
-        cell.textLabel.text = _stillNeedToDownload?@"Downloading...":@"that's all !";
+        UIDownloadStateTableViewCell* cell = [self.tableView dequeueReusableCellWithIdentifier:@"DownloadStatus"];
+        cell.isDownloading = _stillNeedToDownload;
         return cell;
     }
 }

@@ -20,12 +20,29 @@
 
 @synthesize avatarURL = _avatarURL;
 
+-(instancetype) initWithCoder:(NSCoder*)coder {
+    self = [super initWithCoder:coder];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
+}
+
+-(void) commonInit {
+    self.layer.masksToBounds = YES;
+    self.layer.cornerRadius = 10.0;
+}
+
+
 -(void) setAvatarURL:(NSURL *)avatarURL {
     if (![_avatarURL isEqual:avatarURL]) {
         _avatarURL = avatarURL;
         NSURLSession* urlSession = [NSURLSession sharedSession];
-        NSURLRequest* request = [NSURLRequest requestWithURL:_avatarURL];
+        // For avatar the cache is prefered to downloading it again.
+        NSURLRequest* request = [NSURLRequest requestWithURL:_avatarURL cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:5];
+        /*NSCachedURLResponse* cache = [[NSURLCache sharedURLCache] cachedResponseForRequest:request];
         NSLog(@"Connecting to %@", request);
+        NSLog(@"cache was %@", cache.data);*/
         __block UIAvatarView* this = self;
         self.image = nil;
         NSURLSessionDataTask *dataTask = [urlSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {

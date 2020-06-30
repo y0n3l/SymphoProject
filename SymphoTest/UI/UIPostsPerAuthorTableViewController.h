@@ -15,8 +15,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIPostTableViewCell : UITableViewCell {
-    IBOutlet UIImageView* _imageView;
+    IBOutlet UIAvatarView* _imageView;
     IBOutlet UILabel* _titleLabel;
+    IBOutlet UILabel* _dateLabel;
     IBOutlet UILabel* _bodyLabel;
 }
 

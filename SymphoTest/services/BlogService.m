@@ -68,7 +68,7 @@
 }
 
 +(NSURL*) urlForPostFromAuthor:(Author*)author page:(NSInteger)page {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"https://sym-json-server.herokuapp.com/posts?authorId=%ld&_page=%ld",
+    return [NSURL URLWithString:[NSString stringWithFormat:@"https://sym-json-server.herokuapp.com/posts?authorId=%ld&_page=%ld&_sort=date&_order=desc",
                                  (long)author.userId, (long)page ]];
 }
 

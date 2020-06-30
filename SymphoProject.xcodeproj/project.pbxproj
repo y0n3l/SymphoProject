@@ -56,6 +56,7 @@
 		3447EA5924AB0E490036901A /* UIPaginatedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EA5724AB0E490036901A /* UIPaginatedTableViewController.m */; };
 		3461EB3D24AB5D3A001FE425 /* UIAuthorHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461EB3C24AB5D3A001FE425 /* UIAuthorHeaderView.m */; };
 		3461EB4024AB8D4C001FE425 /* UIAvatarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461EB3F24AB8D4C001FE425 /* UIAvatarView.m */; };
+		3461EB4324AB9B4B001FE425 /* UIDownloadStateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461EB4224AB9B4A001FE425 /* UIDownloadStateTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,8 @@
 		3461EB3C24AB5D3A001FE425 /* UIAuthorHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIAuthorHeaderView.m; sourceTree = "<group>"; };
 		3461EB3E24AB8D4C001FE425 /* UIAvatarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIAvatarView.h; sourceTree = "<group>"; };
 		3461EB3F24AB8D4C001FE425 /* UIAvatarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIAvatarView.m; sourceTree = "<group>"; };
+		3461EB4124AB9B4A001FE425 /* UIDownloadStateTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIDownloadStateTableViewCell.h; sourceTree = "<group>"; };
+		3461EB4224AB9B4A001FE425 /* UIDownloadStateTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIDownloadStateTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +244,8 @@
 				3461EB3C24AB5D3A001FE425 /* UIAuthorHeaderView.m */,
 				3461EB3E24AB8D4C001FE425 /* UIAvatarView.h */,
 				3461EB3F24AB8D4C001FE425 /* UIAvatarView.m */,
+				3461EB4124AB9B4A001FE425 /* UIDownloadStateTableViewCell.h */,
+				3461EB4224AB9B4A001FE425 /* UIDownloadStateTableViewCell.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -365,6 +370,7 @@
 				3447EA5624AA7C720036901A /* UIPostsPerAuthorTableViewController.m in Sources */,
 				3447EA5224AA288C0036901A /* ServerStub.m in Sources */,
 				3447EA1124A9BA6E0036901A /* BlogService.m in Sources */,
+				3461EB4324AB9B4B001FE425 /* UIDownloadStateTableViewCell.m in Sources */,
 				3447E9EF24A9437E0036901A /* ViewController.m in Sources */,
 				3447EA2E24A9D94C0036901A /* Comment.m in Sources */,
 				3447EA1A24A9C5520036901A /* NSThread+Block.m in Sources */,

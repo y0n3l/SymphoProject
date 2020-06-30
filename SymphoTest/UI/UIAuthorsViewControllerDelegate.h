@@ -11,12 +11,14 @@
 #import "BlogService.h"
 #import "UIPaginatedTableViewController.h"
 #import "UIPostsPerAuthorTableViewController.h"
+#import "UIAvatarView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIAuthorTableViewCell : UITableViewCell {
-    IBOutlet UIImageView* _avatarView;
-    IBOutlet UILabel* _authorName;
+    IBOutlet UIAvatarView* _avatarView;
+    IBOutlet UILabel* _nameLabel;
+    IBOutlet UILabel* _userNameLabel;
 }
 
 @property (readwrite, strong) Author* author;

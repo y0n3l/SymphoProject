@@ -15,8 +15,9 @@
 
 -(void) setAuthor:(Author *)author {
     _author = author;
-    _authorName.text = _author.userName;
-    
+    _nameLabel.text = _author.name;
+    _userNameLabel.text = author.userName;
+    _avatarView.avatarURL = _author.avatarUrl;
 }
 
 -(Author*) author {
@@ -42,7 +43,7 @@
 #pragma mark - UITableView
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100;
+    return 80;
 }
 
 -(void) downloadPage:(NSInteger)pageIdx withCompletionHandler:(PageDownloadCompletionHandler)hdlr{

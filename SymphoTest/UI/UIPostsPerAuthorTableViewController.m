@@ -15,7 +15,9 @@
 -(void) setPost:(Post *)post {
     _post = post;
     _titleLabel.text = _post.title;
+    _dateLabel.text = [NSDateFormatter localizedStringFromDate:_post.date dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle];;
     _bodyLabel.text = _post.body;
+    _imageView.avatarURL = post.imageURL;
     
 }
 
@@ -49,6 +51,12 @@
 
 -(Author*) author {
     return _author;
+}
+
+#pragma mark - UITableView
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 110;
 }
 
 /**
