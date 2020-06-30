@@ -8,6 +8,22 @@
 
 #import "UIPostDetailsTableViewController.h"
 
+@implementation UIFullPostTableViewCell
+
+@synthesize post = _post;
+
+-(void) setPost:(Post *) post {
+    _post = post;
+    _bodyTextView.text = _post.body;
+    
+}
+
+-(Post*) post {
+    return _post;
+}
+
+@end
+
 @implementation UICommentTableViewCell
 
 @synthesize comment = _comment;
@@ -32,6 +48,14 @@
     [super commonInit];
     _blogService = [[BlogService alloc] init];
 }
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    // we want comments to be handled as paginated by the super class, but we also
+    // want 1 row more at the beginning of the table to show the post.
+    return [super tableView:tableView numberOfRowsInSection:section]+1;
+}
+ 
 
 /**
  

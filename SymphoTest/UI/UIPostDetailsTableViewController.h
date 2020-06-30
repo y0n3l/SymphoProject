@@ -13,6 +13,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface UIFullPostTableViewCell : UITableViewCell {
+    IBOutlet UIAvatarView* _avatarView;
+    IBOutlet UILabel* _usernameLabel;
+    IBOutlet UILabel* _dateLabel;
+    IBOutlet UITextView* _bodyTextView;
+}
+@property (readwrite) Post* post;
+@end
+
 @interface UICommentTableViewCell : UITableViewCell {
     IBOutlet UIAvatarView* _avatarView;
     IBOutlet UILabel* _usernameLabel;
