@@ -8,6 +8,23 @@
 
 #import "UIPostsPerAuthorTableViewController.h"
 
+@implementation UIPostTableViewCell
+
+@synthesize post = _post;
+
+-(void) setPost:(Post *)post {
+    _post = post;
+    _titleLabel.text = _post.title;
+    _bodyLabel.text = _post.body;
+    
+}
+
+-(Post*) post {
+    return _post;
+}
+
+@end
+
 @implementation UIPostsPerAuthorTableViewController
 
 -(void) commonInit {
@@ -25,7 +42,7 @@
 }
 
 -(UITableViewCell*) paginatedTableView:(UITableView*)tableView cellForContent:(NSObject*) contentObject {
-    UIPostTableViewCell* cell = [self.tableView dequeueReusableCellWithIdentifier:@"PostCell"];
+    UIPostTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
     cell.post = (Post*)contentObject;
     return cell;
 }

@@ -66,8 +66,9 @@
 
 #pragma mark -
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    UIViewController *vcToPushTo = segue.destinationViewController;
-    //vcToPushTo.propertyToSet = self.someProperty;
+    UIPostsPerAuthorTableViewController *vcToPushTo = (UIPostsPerAuthorTableViewController*)segue.destinationViewController;
+    NSIndexPath* selection = self.tableView.indexPathForSelectedRow;
+    vcToPushTo.author = [self.authorsList objectAtIndex:selection.row];
 }
 
 #pragma mark - UITableView
