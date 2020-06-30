@@ -28,12 +28,14 @@
 
 @implementation UIAuthorsViewControllerDelegate
 
+#pragma mark - Life cycle
+
 -(void) commonInit {
     [super commonInit];
     _blogService = [[BlogService alloc] init];
 }
 
-#pragma mark -
+#pragma mark - Transitions
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     UIPostsPerAuthorTableViewController *vcToPushTo = (UIPostsPerAuthorTableViewController*)segue.destinationViewController;
     NSIndexPath* selection = self.tableView.indexPathForSelectedRow;

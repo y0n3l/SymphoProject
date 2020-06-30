@@ -73,7 +73,7 @@
 }
 
 +(NSURL*) urlForCommentsFromPost:(Post*)post page:(NSInteger)page {
-    return [NSURL URLWithString:[NSString stringWithFormat:@"https://sym-json-server.herokuapp.com/comments?postId=%ld&_page=%ld",
+    return [NSURL URLWithString:[NSString stringWithFormat:@"https://sym-json-server.herokuapp.com/comments?postId=%ld&_page=%ld&_sort=date&_order=asc",
                                  (long)post.postId, page]];
 }
 

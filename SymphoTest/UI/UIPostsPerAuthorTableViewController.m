@@ -7,6 +7,7 @@
 //
 
 #import "UIPostsPerAuthorTableViewController.h"
+#import "UIPostDetailsTableViewController.h"
 
 @implementation UIPostTableViewCell
 
@@ -15,7 +16,7 @@
 -(void) setPost:(Post *)post {
     _post = post;
     _titleLabel.text = _post.title;
-    _dateLabel.text = [NSDateFormatter localizedStringFromDate:_post.date dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle];;
+    _dateLabel.text = [NSDateFormatter localizedStringFromDate:_post.date dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle];
     _bodyLabel.text = _post.body;
     _imageView.avatarURL = post.imageURL;
     
@@ -34,6 +35,13 @@
 -(void) commonInit {
     [super commonInit];
     _blogService = [[BlogService alloc] init];
+}
+
+#pragma mark -
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    UIPostDetailsTableViewController *vcToPushTo = (UIPostDetailsTableViewController*)segue.destinationViewController;
+    NSIndexPath* selection = self.tableView.indexPathForSelectedRow;
+    vcToPushTo.post = (Post*)[self.contentList objectAtIndex:selection.row];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {

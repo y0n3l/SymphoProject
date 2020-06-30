@@ -57,6 +57,7 @@
 		3461EB3D24AB5D3A001FE425 /* UIAuthorHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461EB3C24AB5D3A001FE425 /* UIAuthorHeaderView.m */; };
 		3461EB4024AB8D4C001FE425 /* UIAvatarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461EB3F24AB8D4C001FE425 /* UIAvatarView.m */; };
 		3461EB4324AB9B4B001FE425 /* UIDownloadStateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461EB4224AB9B4A001FE425 /* UIDownloadStateTableViewCell.m */; };
+		34E57F6724ABC1D000B575E2 /* UIPostDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E57F6624ABC1D000B575E2 /* UIPostDetailsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,8 @@
 		3461EB3F24AB8D4C001FE425 /* UIAvatarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIAvatarView.m; sourceTree = "<group>"; };
 		3461EB4124AB9B4A001FE425 /* UIDownloadStateTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIDownloadStateTableViewCell.h; sourceTree = "<group>"; };
 		3461EB4224AB9B4A001FE425 /* UIDownloadStateTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIDownloadStateTableViewCell.m; sourceTree = "<group>"; };
+		34E57F6524ABC1D000B575E2 /* UIPostDetailsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIPostDetailsTableViewController.h; sourceTree = "<group>"; };
+		34E57F6624ABC1D000B575E2 /* UIPostDetailsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIPostDetailsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +243,8 @@
 				3447EA5024AA24070036901A /* UIAuthorsViewControllerDelegate.m */,
 				3447EA5424AA7C720036901A /* UIPostsPerAuthorTableViewController.h */,
 				3447EA5524AA7C720036901A /* UIPostsPerAuthorTableViewController.m */,
+				34E57F6524ABC1D000B575E2 /* UIPostDetailsTableViewController.h */,
+				34E57F6624ABC1D000B575E2 /* UIPostDetailsTableViewController.m */,
 				3461EB3B24AB5D3A001FE425 /* UIAuthorHeaderView.h */,
 				3461EB3C24AB5D3A001FE425 /* UIAuthorHeaderView.m */,
 				3461EB3E24AB8D4C001FE425 /* UIAvatarView.h */,
@@ -369,6 +374,7 @@
 			files = (
 				3447EA5624AA7C720036901A /* UIPostsPerAuthorTableViewController.m in Sources */,
 				3447EA5224AA288C0036901A /* ServerStub.m in Sources */,
+				34E57F6724ABC1D000B575E2 /* UIPostDetailsTableViewController.m in Sources */,
 				3447EA1124A9BA6E0036901A /* BlogService.m in Sources */,
 				3461EB4324AB9B4B001FE425 /* UIDownloadStateTableViewCell.m in Sources */,
 				3447E9EF24A9437E0036901A /* ViewController.m in Sources */,
