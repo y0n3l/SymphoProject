@@ -34,6 +34,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+/**
+This class implements the display of a post and its related comments with paginated content handling.
+It specialises the super class by enabling the add of a special header cell showing the post at the begining
+of the table.
+*/
 @interface UIPostDetailsTableViewController : UIPaginatedTableViewController {
     BlogService* _blogService;
 }

@@ -9,11 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "UIPaginatedTableViewController.h"
-#import "UIAuthorHeaderView.h"
+#import "UIAvatarView.h"
 #import "BlogService.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ A table view cell displaying an author details.
+ */
 @interface UIFullAuthorTableViewCell : UITableViewCell {
     IBOutlet UIAvatarView* _avatarView;
     IBOutlet UILabel* _nameLabel;
@@ -23,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readwrite) Author* author;
 @end
 
+/** A table view cell */
 @interface UIPostTableViewCell : UITableViewCell {
     IBOutlet UIAvatarView* _imageView;
     IBOutlet UILabel* _titleLabel;
@@ -34,6 +38,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+/**
+ This class implements the display of an author posts with paginated content handling.
+ It specialises the super class by enabling the add of a special header cell showing the author details at the begining
+ of the table.
+ */
 @interface UIAuthorDetailsTableViewController : UIPaginatedTableViewController {
     BlogService* _blogService;
 }

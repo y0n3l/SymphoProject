@@ -15,6 +15,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ A table view cell that shows an author.
+ */
 @interface UIAuthorTableViewCell : UITableViewCell {
     IBOutlet UIAvatarView* _avatarView;
     IBOutlet UILabel* _nameLabel;
@@ -25,6 +28,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+/**
+ This class manages the rendition of the list of authors with pages.
+ */
 @interface UIAuthorsViewControllerDelegate : UIPaginatedTableViewController {
     BlogService* _blogService;
 }

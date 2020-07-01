@@ -10,8 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ This class handles the download and display of a user avatar.
+ */
 @interface UIAvatarView : UIImageView
 
+/** The url of the avatar url to be shown. */
 @property (readwrite, copy) NSURL* avatarURL;
 
 @end

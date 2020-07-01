@@ -54,7 +54,6 @@
 		3447EA5324AA2EE20036901A /* authors_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3447EA1C24A9C6E60036901A /* authors_1.json */; };
 		3447EA5624AA7C720036901A /* UIAuthorDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EA5524AA7C720036901A /* UIAuthorDetailsTableViewController.m */; };
 		3447EA5924AB0E490036901A /* UIPaginatedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EA5724AB0E490036901A /* UIPaginatedTableViewController.m */; };
-		3461EB3D24AB5D3A001FE425 /* UIAuthorHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461EB3C24AB5D3A001FE425 /* UIAuthorHeaderView.m */; };
 		3461EB4024AB8D4C001FE425 /* UIAvatarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461EB3F24AB8D4C001FE425 /* UIAvatarView.m */; };
 		3461EB4324AB9B4B001FE425 /* UIDownloadStateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3461EB4224AB9B4A001FE425 /* UIDownloadStateTableViewCell.m */; };
 		34E57F6724ABC1D000B575E2 /* UIPostDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E57F6624ABC1D000B575E2 /* UIPostDetailsTableViewController.m */; };
@@ -114,8 +113,6 @@
 		3447EA5524AA7C720036901A /* UIAuthorDetailsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIAuthorDetailsTableViewController.m; sourceTree = "<group>"; };
 		3447EA5724AB0E490036901A /* UIPaginatedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPaginatedTableViewController.m; sourceTree = "<group>"; };
 		3447EA5824AB0E490036901A /* UIPaginatedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPaginatedTableViewController.h; sourceTree = "<group>"; };
-		3461EB3B24AB5D3A001FE425 /* UIAuthorHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIAuthorHeaderView.h; sourceTree = "<group>"; };
-		3461EB3C24AB5D3A001FE425 /* UIAuthorHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIAuthorHeaderView.m; sourceTree = "<group>"; };
 		3461EB3E24AB8D4C001FE425 /* UIAvatarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIAvatarView.h; sourceTree = "<group>"; };
 		3461EB3F24AB8D4C001FE425 /* UIAvatarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIAvatarView.m; sourceTree = "<group>"; };
 		3461EB4124AB9B4A001FE425 /* UIDownloadStateTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIDownloadStateTableViewCell.h; sourceTree = "<group>"; };
@@ -245,8 +242,6 @@
 				3447EA5524AA7C720036901A /* UIAuthorDetailsTableViewController.m */,
 				34E57F6524ABC1D000B575E2 /* UIPostDetailsTableViewController.h */,
 				34E57F6624ABC1D000B575E2 /* UIPostDetailsTableViewController.m */,
-				3461EB3B24AB5D3A001FE425 /* UIAuthorHeaderView.h */,
-				3461EB3C24AB5D3A001FE425 /* UIAuthorHeaderView.m */,
 				3461EB3E24AB8D4C001FE425 /* UIAvatarView.h */,
 				3461EB3F24AB8D4C001FE425 /* UIAvatarView.m */,
 				3461EB4124AB9B4A001FE425 /* UIDownloadStateTableViewCell.h */,
@@ -388,7 +383,6 @@
 				3447EA5924AB0E490036901A /* UIPaginatedTableViewController.m in Sources */,
 				3447EA2324A9CD520036901A /* Author.m in Sources */,
 				3447E9EC24A9437E0036901A /* SceneDelegate.m in Sources */,
-				3461EB3D24AB5D3A001FE425 /* UIAuthorHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
