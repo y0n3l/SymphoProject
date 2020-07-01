@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface UIPostsPerAuthorTableViewController : UIPaginatedTableViewController {
+@interface UIAuthorDetailsTableViewController : UIPaginatedTableViewController {
     BlogService* _blogService;
 }
 

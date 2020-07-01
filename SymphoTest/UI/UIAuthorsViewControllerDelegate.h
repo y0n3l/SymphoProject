@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "BlogService.h"
 #import "UIPaginatedTableViewController.h"
-#import "UIPostsPerAuthorTableViewController.h"
+#import "UIAuthorDetailsTableViewController.h"
 #import "UIAvatarView.h"
 
 NS_ASSUME_NONNULL_BEGIN

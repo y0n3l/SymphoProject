@@ -6,7 +6,7 @@
 //  Copyright © 2020 sympho. All rights reserved.
 //
 
-#import "UIPostsPerAuthorTableViewController.h"
+#import "UIAuthorDetailsTableViewController.h"
 #import "UIPostDetailsTableViewController.h"
 
 @implementation UIFullAuthorTableViewCell
@@ -46,7 +46,7 @@
 
 @end
 
-@implementation UIPostsPerAuthorTableViewController
+@implementation UIAuthorDetailsTableViewController
 
 -(void) commonInit {
     [super commonInit];

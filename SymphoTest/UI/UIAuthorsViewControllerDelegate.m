@@ -37,7 +37,7 @@
 
 #pragma mark - Transitions
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    UIPostsPerAuthorTableViewController *vcToPushTo = (UIPostsPerAuthorTableViewController*)segue.destinationViewController;
+    UIAuthorDetailsTableViewController *vcToPushTo = (UIAuthorDetailsTableViewController*)segue.destinationViewController;
     NSIndexPath* selection = self.tableView.indexPathForSelectedRow;
     vcToPushTo.author = (Author*)[self.contentList objectAtIndex:selection.row];
 }
