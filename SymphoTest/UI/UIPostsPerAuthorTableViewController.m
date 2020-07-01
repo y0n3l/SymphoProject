@@ -9,6 +9,24 @@
 #import "UIPostsPerAuthorTableViewController.h"
 #import "UIPostDetailsTableViewController.h"
 
+@implementation UIFullAuthorTableViewCell
+
+@synthesize author = _author;
+
+-(void) setAuthor:(Author *)author {
+    _author = author;
+    _usernameLabel.text = _author.userName;
+    _avatarView.avatarURL = _author.avatarUrl;
+    _nameLabel.text = _author.name;
+    _emailLabel.text = _author.email;
+}
+
+-(Author*) author {
+    return _author;
+}
+
+@end
+
 @implementation UIPostTableViewCell
 
 @synthesize post = _post;
@@ -30,8 +48,6 @@
 
 @implementation UIPostsPerAuthorTableViewController
 
-@synthesize author = _author;
-
 -(void) commonInit {
     [super commonInit];
     _blogService = [[BlogService alloc] init];
@@ -44,27 +60,33 @@
     vcToPushTo.post = (Post*)[self.contentList objectAtIndex:selection.row];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 200;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    return _headerView;
-}
-
--(void) setAuthor:(Author *)author {
-    _author = author;
-    _headerView.author = _author;
-}
-
--(Author*) author {
-    return _author;
-}
-
 #pragma mark - UITableView
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 110;
+    if (indexPath.row==0)
+        return 140;
+    else
+        return 110;
+}
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    // we want comments to be handled as paginated by the super class, but we also
+    // want 1 row more at the beginning of the table to show the post.
+    return [super tableView:tableView numberOfRowsInSection:section]+1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    // if this is the first row, we show the full post
+    // otherwise we invoke the paginated controller and make it think that wze want to access
+    // content as row-1 (as we added a header row at this level).
+    if (indexPath.row==0) {
+        UIFullAuthorTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"FullAuthor"];
+        cell.author = self.author;
+        return cell;
+    } else {
+        return [super tableView:tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row-1 inSection:indexPath.section]];
+    }
 }
 
 /**

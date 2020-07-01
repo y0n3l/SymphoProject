@@ -14,6 +14,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface UIFullAuthorTableViewCell : UITableViewCell {
+    IBOutlet UIAvatarView* _avatarView;
+    IBOutlet UILabel* _nameLabel;
+    IBOutlet UILabel* _usernameLabel;
+    IBOutlet UILabel* _emailLabel;
+}
+@property (readwrite) Author* author;
+@end
+
 @interface UIPostTableViewCell : UITableViewCell {
     IBOutlet UIAvatarView* _imageView;
     IBOutlet UILabel* _titleLabel;
@@ -27,7 +36,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIPostsPerAuthorTableViewController : UIPaginatedTableViewController {
     BlogService* _blogService;
-    IBOutlet UIAuthorHeaderView* _headerView;
 }
 
 @property (readwrite) Author* author;
