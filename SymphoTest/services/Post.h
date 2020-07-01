@@ -11,22 +11,20 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- {
-   "id": 1,
-   "date": "2017-12-05T02:18:18.571Z",
-   "title": "Quis doloribus libero ipsam.",
-   "body": "Quibusdam nemo dolor cum. Nihil et nisi atque ut earum magnam dolorem quia. Eveniet deleniti et voluptatem molestiae. Rerum nostrum nam illum et corrupti soluta fugit voluptate. Error assumenda qui rerum dolor.",
-   "imageUrl": "https://picsum.photos/id/146/640/480",
-   "authorId": 1
- },
+ This class defines blog posts entries.
  */
 
 @interface Post : NSObject
 
+/** This post unique identifier. */
 @property (readwrite) NSInteger postId;
+/** The date when this post has been written. */
 @property (readwrite, copy) NSDate* date;
+/** This post title. */
 @property (readwrite, copy) NSString* title;
+/** This post body */
 @property (readwrite, copy) NSString* body;
+/** URL of the image illustrating this post. */
 @property (readwrite, strong) NSURL* imageURL;
 
 @end

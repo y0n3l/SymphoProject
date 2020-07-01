@@ -13,11 +13,17 @@ NS_ASSUME_NONNULL_BEGIN
 /* This class describes a blog post comment. */
 @interface Comment : NSObject
 
+/** This comment unique identifer. */
 @property (readwrite) NSInteger commentId;
+/** The date when this comment has been made. */
 @property (readwrite, copy) NSDate* date;
+/** This post body content. */
 @property (readwrite, copy) NSString* body;
+/** The username of the user who wrote this comment. */
 @property (readwrite, copy) NSString* userName;
+/** The email of the user who wrote this comment. */
 @property (readwrite, copy) NSString* email;
+/** An avatar for the user who wrote this comment. */
 @property (readwrite, copy) NSURL* avatarURL;
 
 @end
