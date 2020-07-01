@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
     IBOutlet UIAvatarView* _avatarView;
     IBOutlet UILabel* _usernameLabel;
     IBOutlet UILabel* _dateLabel;
+    IBOutlet UILabel* _titleLabel;
     IBOutlet UITextView* _bodyTextView;
 }
 @property (readwrite) Post* post;
@@ -26,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
     IBOutlet UIAvatarView* _avatarView;
     IBOutlet UILabel* _usernameLabel;
     IBOutlet UILabel* _dateLabel;
+    IBOutlet UITextView* _titleTextView;
     IBOutlet UITextView* _bodyTextView;
 }
 

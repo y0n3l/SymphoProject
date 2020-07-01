@@ -15,7 +15,8 @@
 -(void) setPost:(Post *) post {
     _post = post;
     _bodyTextView.text = _post.body;
-    
+    _titleLabel.text = _post.title;
+    _dateLabel.text = [NSDateFormatter localizedStringFromDate:_post.date dateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle];
 }
 
 -(Post*) post {
