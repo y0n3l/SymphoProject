@@ -23,6 +23,10 @@
     // Put teardown code here. This method is called after the invocation of each test method in the class.
 }
 
+/**
+ Tests the retrieving of a page of authors : check the content of one author reflected by the blog service +
+ the threading model.
+ */
 - (void)testAuthorsPageProcessing {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
@@ -47,16 +51,10 @@
 }
 
 
-/*
- {
-   "id": 1,
-   "date": "2017-12-05T02:18:18.571Z",
-   "title": "Quis doloribus libero ipsam.",
-   "body": "Quibusdam nemo dolor cum. Nihil et nisi atque ut earum magnam dolorem quia. Eveniet deleniti et voluptatem molestiae. Rerum nostrum nam illum et corrupti soluta fugit voluptate. Error assumenda qui rerum dolor.",
-   "imageUrl": "https://picsum.photos/id/146/640/480",
-   "authorId": 1
- },
- */
+/**
+Tests the retrieving of a page of post for a given author : check the content of one post reflected by the blog service +
+the threading model.
+*/
 - (void)testPostPageProcessing {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
@@ -80,14 +78,10 @@
     XCTAssertEqual([XCTWaiter waitForExpectations:@[expect] timeout:2], XCTWaiterResultCompleted);
 }
 
-/*
-"id": 1,
-"date": "2017-02-20T02:37:31.883Z",
-"body": "Ratione et modi ipsam qui doloremque harum et. Quia recusandae voluptas ex fugiat. Aut eligendi quia natus voluptatem error delectus incidunt adipisci. Est illum rem cumque.",
-"userName": "Shaun_Orn",
-"email": "halle79@gmail.com",
-"avatarUrl": "https://s3.amazonaws.com/uifaces/faces/twitter/a_harris88/128.jpg",
-"postId": 1 */
+/**
+Tests the retrieving of a comments page for a post : checks the content of one comment reflected by the blog service +
+the threading model.
+*/
 - (void)testCommentsPageProcessing {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
@@ -114,12 +108,5 @@
 }
 
 
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
-}
 
 @end

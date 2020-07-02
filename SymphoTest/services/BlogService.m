@@ -22,7 +22,7 @@
 -(void) getAuthorsPage:(NSInteger)page withCompletionHandler:(AuthorsDownloadCompletionHandler)handler {
     NSThread* currentThread = [NSThread currentThread];
     NSURLSession* urlSession = [NSURLSession sharedSession];
-    NSURLRequest* request = [NSURLRequest requestWithURL:[BlogService urlForAuthorsPage:page]];
+    NSURLRequest* request = [NSURLRequest requestWithURL:[self  urlForAuthorsPage:page]];
     NSLog(@"Connecting to %@", request);
     NSURLSessionDataTask *dataTask = [urlSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSArray* json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
@@ -37,7 +37,7 @@
 -(void) getPostsPage:(NSInteger)page forAuthor:(Author*)author withCompletionHandler:(PostsDownloadCompletionHandler)handler {
     NSThread* currentThread = [NSThread currentThread];
     NSURLSession* urlSession = [NSURLSession sharedSession];
-    NSURLRequest* request = [NSURLRequest requestWithURL:[BlogService urlForPostFromAuthor:author page:page]];
+    NSURLRequest* request = [NSURLRequest requestWithURL:[self urlForPostFromAuthor:author page:page]];
     NSLog(@"Connecting to %@", request);
     NSURLSessionDataTask *dataTask = [urlSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSArray* json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
@@ -52,7 +52,7 @@
 -(void) getCommentsPage:(NSInteger)page forPost:(Post*)post withCompletionHandler:(CommentsDownloadCompletionHandler)handler {
     NSThread* currentThread = [NSThread currentThread];
     NSURLSession* urlSession = [NSURLSession sharedSession];
-    NSURLRequest* request = [NSURLRequest requestWithURL:[BlogService urlForCommentsFromPost:post page:page]];
+    NSURLRequest* request = [NSURLRequest requestWithURL:[self urlForCommentsFromPost:post page:page]];
     NSLog(@"Connecting to %@", request);
     NSURLSessionDataTask *dataTask = [urlSession dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSArray* json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
@@ -64,16 +64,16 @@
     [dataTask resume];
 }
 
-+(NSURL*) urlForAuthorsPage:(NSInteger)page {
+-(NSURL*) urlForAuthorsPage:(NSInteger)page {
     return [NSURL URLWithString:[NSString stringWithFormat:@"https://sym-json-server.herokuapp.com/authors?_page=%ld", (long)page]];
 }
 
-+(NSURL*) urlForPostFromAuthor:(Author*)author page:(NSInteger)page {
+-(NSURL*) urlForPostFromAuthor:(Author*)author page:(NSInteger)page {
     return [NSURL URLWithString:[NSString stringWithFormat:@"https://sym-json-server.herokuapp.com/posts?authorId=%ld&_page=%ld&_sort=date&_order=desc",
                                  (long)author.userId, (long)page ]];
 }
 
-+(NSURL*) urlForCommentsFromPost:(Post*)post page:(NSInteger)page {
+-(NSURL*) urlForCommentsFromPost:(Post*)post page:(NSInteger)page {
     return [NSURL URLWithString:[NSString stringWithFormat:@"https://sym-json-server.herokuapp.com/comments?postId=%ld&_page=%ld&_sort=date&_order=asc",
                                  (long)post.postId, page]];
 }

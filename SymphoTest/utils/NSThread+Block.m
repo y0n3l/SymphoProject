@@ -23,11 +23,4 @@
                withObject:[block copy]
             waitUntilDone:wait];
 }
-
-- (void)performBlock:(void (^)(void))block afterDelay:(NSTimeInterval)delay {
-    [self performSelector:@selector(runBlock:)
-               withObject:[block copy]
-               afterDelay:delay];
-}
-
 @end

@@ -16,6 +16,4 @@
 
 - (void)performBlock:(void (^)(void))block waitUntilDone:(BOOL)wait;
 
-- (void)performBlock:(void (^)(void))block afterDelay:(NSTimeInterval)delay;
-
 @end
