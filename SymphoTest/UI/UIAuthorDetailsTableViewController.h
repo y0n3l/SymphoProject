@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readwrite) Author* author;
 @end
 
-/** A table view cell */
+/** A table view cell displaying a blog post entry. */
 @interface UIPostTableViewCell : UITableViewCell {
     IBOutlet UIAvatarView* _imageView;
     IBOutlet UILabel* _titleLabel;

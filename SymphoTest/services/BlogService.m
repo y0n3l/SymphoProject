@@ -96,16 +96,6 @@
     return authorsArray;
 }
 
-/*
-{
-  "id": 1,
-  "date": "2017-12-05T02:18:18.571Z",
-  "title": "Quis doloribus libero ipsam.",
-  "body": "Quibusdam nemo dolor cum. Nihil et nisi atque ut earum magnam dolorem quia. Eveniet deleniti et voluptatem molestiae. Rerum nostrum nam illum et corrupti soluta fugit voluptate. Error assumenda qui rerum dolor.",
-  "imageUrl": "https://picsum.photos/id/146/640/480",
-  "authorId": 1
-},*/
-
 -(NSArray*) createPostsFromJSONStructure:(NSArray*)json {
     NSMutableArray* postsArray = [NSMutableArray array];
     for (NSDictionary* dict in json) {
@@ -121,16 +111,6 @@
     }
     return postsArray;
 }
-
-/*
-"id": 1,
-"date": "2017-02-20T02:37:31.883Z",
-"body": "Ratione et modi ipsam qui doloremque harum et. Quia recusandae voluptas ex fugiat. Aut eligendi quia natus voluptatem error delectus incidunt adipisci. Est illum rem cumque.",
-"userName": "Shaun_Orn",
-"email": "halle79@gmail.com",
-"avatarUrl": "https://s3.amazonaws.com/uifaces/faces/twitter/a_harris88/128.jpg",
-"postId": 1*/
-
 
 -(NSArray*) createCommentsFromJSONStructure:(NSArray*)json {
     NSMutableArray* commentsArray = [NSMutableArray array];
