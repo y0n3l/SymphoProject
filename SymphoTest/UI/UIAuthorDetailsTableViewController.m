@@ -62,6 +62,14 @@
 
 #pragma mark - UITableView
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return section==0?@"":@"Posts";
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row==0)
         return 140;
@@ -71,21 +79,24 @@
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // we want comments to be handled as paginated by the super class, but we also
-    // want 1 row more at the beginning of the table to show the post.
-    return [super tableView:tableView numberOfRowsInSection:section]+1;
+    // first section will show the author details
+    // and second section will show the paginated browsing for all posts from this author.
+    if (section==0)
+        return 1;
+    else
+        return [super tableView:tableView numberOfRowsInSection:section];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    // if this is the first row, we show the full post
-    // otherwise we invoke the paginated controller and make it think that wze want to access
-    // content as row-1 (as we added a header row at this level).
-    if (indexPath.row==0) {
+    // if this is the first section, we show the full post
+    // otherwise we invoke the parent paginated controller to have pages handling
+    // for second section).
+    if (indexPath.section==0) {
         UIFullAuthorTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"FullAuthor"];
         cell.author = self.author;
         return cell;
     } else {
-        return [super tableView:tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row-1 inSection:indexPath.section]];
+        return [super tableView:tableView cellForRowAtIndexPath:indexPath];
     }
 }
 
