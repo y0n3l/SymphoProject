@@ -14,7 +14,7 @@
 		3447E9F424A943800036901A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3447E9F324A943800036901A /* Assets.xcassets */; };
 		3447E9F724A943800036901A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3447E9F524A943800036901A /* LaunchScreen.storyboard */; };
 		3447E9FA24A943800036901A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447E9F924A943800036901A /* main.m */; };
-		3447EA0424A943800036901A /* SymphoTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EA0324A943800036901A /* SymphoTestTests.m */; };
+		3447EA0424A943800036901A /* BusinessLogicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EA0324A943800036901A /* BusinessLogicTests.m */; };
 		3447EA1124A9BA6E0036901A /* BlogService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EA1024A9BA6E0036901A /* BlogService.m */; };
 		3447EA1A24A9C5520036901A /* NSThread+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 3447EA1824A9C5520036901A /* NSThread+Block.m */; };
 		3447EA1D24A9C6E60036901A /* authors_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 3447EA1C24A9C6E60036901A /* authors_1.json */; };
@@ -83,7 +83,7 @@
 		3447E9F824A943800036901A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3447E9F924A943800036901A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3447E9FF24A943800036901A /* SymphoProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SymphoProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3447EA0324A943800036901A /* SymphoTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SymphoTestTests.m; sourceTree = "<group>"; };
+		3447EA0324A943800036901A /* BusinessLogicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BusinessLogicTests.m; sourceTree = "<group>"; };
 		3447EA0524A943800036901A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3447EA0F24A9BA6E0036901A /* BlogService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlogService.h; sourceTree = "<group>"; };
 		3447EA1024A9BA6E0036901A /* BlogService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlogService.m; sourceTree = "<group>"; };
@@ -182,7 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				3447EA1B24A9C6D10036901A /* serverResponses */,
-				3447EA0324A943800036901A /* SymphoTestTests.m */,
+				3447EA0324A943800036901A /* BusinessLogicTests.m */,
 				3447EA1E24A9C73F0036901A /* ServerStub.h */,
 				3447EA1F24A9C73F0036901A /* ServerStub.m */,
 				3447EA0524A943800036901A /* Info.plist */,
@@ -402,7 +402,7 @@
 				3447EA4C24AA1FC30036901A /* Comment.h in Sources */,
 				3447EA4D24AA1FC30036901A /* Comment.m in Sources */,
 				3447EA2024A9C73F0036901A /* ServerStub.m in Sources */,
-				3447EA0424A943800036901A /* SymphoTestTests.m in Sources */,
+				3447EA0424A943800036901A /* BusinessLogicTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
